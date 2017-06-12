@@ -1,0 +1,16 @@
+.user {
+  border-radius: 50%;
+  cursor: pointer;
+  height: 2.25em;
+  transition: transform .15s ease-out;
+  width: 2.25em;
+  vertical-align: bottom;
+}
+
+.user:hover {
+  transform: scale(1.25);
+}
+
+.label {
+  vertical-align: inherit;
+}

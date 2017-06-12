@@ -1,7 +1,33 @@
-md-sidenav-container {
-  height: 100%;
+.app-toolbar {
 }
 
-md-sidenav {
-  width: 250px;
+.app-toolbar-title {
+  padding: 0px 16px;
+}
+
+.app-toolbar-filler {
+  flex: 1 1 auto;
+}
+
+.sidenav-container {
+  height: calc(100vh - 64px); /* .mat-toolbar {	min-height:64px } */
+}
+
+.sidenav {
+  padding: 16px;
+  min-width: 200px;
+  /*width: 200px;*/
+}
+
+.sidenav-item {
+  cursor: pointer;
+  transition: background-color .15s ease-out;
+}
+
+.sidenav-item:hover {
+  background-color: #eee;
+}
+
+:host .sidenav-item span {
+  margin-left: .5em;
 }

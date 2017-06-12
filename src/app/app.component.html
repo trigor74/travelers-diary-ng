@@ -1,26 +1,44 @@
-<md-toolbar color="primary">
+<md-toolbar color="primary" class="app-toolbar">
   <button md-icon-button (click)="sidenav.toggle()">
     <md-icon class="md-24">menu</md-icon>
   </button>
-
-  {{title}}
-
+  <span class="app-toolbar-title">{{title}}</span>
+  <span class="app-toolbar-filler"></span>
+  <app-account></app-account>
 </md-toolbar>
 
-<md-sidenav-container>
-  <md-sidenav #sidenav mode="over" opened="false">
+<md-sidenav-container class="sidenav-container">
+  <md-sidenav class="sidenav" #sidenav mode="over" opened="false">
     <!-- Sidenav content -->
-      Sidenav content
-      <br/>
-      <br/>
-      <a md-button routerLink="/"><md-icon class="md-18">home</md-icon> Home</a>
-      <br/>
-      <br/>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec urna massa. Integer venenatis sagittis quam sed sagittis. In tincidunt vel massa eu fermentum. Phasellus eget scelerisque odio. Maecenas sit amet nulla et elit ullamcorper ultrices ac ac arcu. Vivamus a neque gravida, dapibus augue sed, ultrices urna. Ut eleifend sagittis turpis quis iaculis. Duis eget arcu nunc. Proin placerat velit vel tellus auctor elementum. Morbi velit tellus, feugiat sed velit et, lobortis interdum sapien. Mauris sed eros et ante interdum ultricies. Nunc eget tortor nec justo tristique mollis. Cras dictum orci vitae nunc posuere, sit amet porttitor nibh scelerisque. Duis ut lorem aliquet, lacinia neque eget, semper ante.
+    <md-list>
+      <h3 md-subheader>Section 1</h3>
+      <md-list-item class="sidenav-item" routerLink="/">
+        <md-icon class="md-18">home</md-icon>
+        <span>Home</span>
+      </md-list-item>
+      <md-list-item class="sidenav-item" routerLink="/">
+        <md-icon class="md-18">home</md-icon>
+        <span>Home</span>
+      </md-list-item>
+      <md-list-item class="sidenav-item" routerLink="/">
+        <md-icon class="md-18">home</md-icon>
+        <span>Home</span>
+      </md-list-item>
+      <md-divider></md-divider>
+      <h3 md-subheader>Section 2</h3>
+      <md-list-item class="sidenav-item" routerLink="/">
+        <md-icon class="md-18">home</md-icon>
+        <span>Home</span>
+      </md-list-item>
+      <md-list-item class="sidenav-item" routerLink="/">
+        <md-icon class="md-18">home</md-icon>
+        <span>Home</span>
+      </md-list-item>
+    </md-list>
   </md-sidenav>
 
   <!-- Main content -->
-  <div class="my-content">
+  <div class="app-content">
     Main content<br/>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec urna massa. Integer venenatis sagittis quam sed sagittis. In tincidunt vel massa eu fermentum. Phasellus eget scelerisque odio. Maecenas sit amet nulla et elit ullamcorper ultrices ac ac arcu. Vivamus a neque gravida, dapibus augue sed, ultrices urna. Ut eleifend sagittis turpis quis iaculis. Duis eget arcu nunc. Proin placerat velit vel tellus auctor elementum. Morbi velit tellus, feugiat sed velit et, lobortis interdum sapien. Mauris sed eros et ante interdum ultricies. Nunc eget tortor nec justo tristique mollis. Cras dictum orci vitae nunc posuere, sit amet porttitor nibh scelerisque. Duis ut lorem aliquet, lacinia neque eget, semper ante.
   </div>

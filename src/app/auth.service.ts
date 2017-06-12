@@ -34,7 +34,8 @@ export class AuthService {
       //   // }
       // })
       .catch(err => {
-        alert('ERROR: ' + err.message);
+        // alert('ERROR: ' + err.message);
+        console.log('ERROR: ', err.message);
       });
   }
 
@@ -43,12 +44,17 @@ export class AuthService {
       .auth
       .signOut()
       .catch(err => {
-          alert('ERROR: ' + err.message);
+          // alert('ERROR: ' + err.message);
+        console.log('ERROR: ', err.message);
       });
   }
 
+  get authenticated(): boolean {
+    return this.user !== null;
+  }
+
   get userInfo(): firebase.UserInfo {
-    if (this.user) {
+    if (this.authenticated) {
       return this.afAuth.auth.currentUser.providerData[0];
     } else {
       return null;
@@ -56,7 +62,7 @@ export class AuthService {
   }
 
   get uid(): string {
-    if (this.user) {
+    if (this.authenticated) {
       return this.afAuth.auth.currentUser.uid
     } else {
       return null;

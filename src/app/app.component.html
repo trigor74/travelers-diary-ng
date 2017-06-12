@@ -1,20 +1,28 @@
-<!--The whole content below can be removed with the new code.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!!
-  </h1>
-  <img width="300" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAyNTAgMjUwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNTAgMjUwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojREQwMDMxO30NCgkuc3Qxe2ZpbGw6I0MzMDAyRjt9DQoJLnN0MntmaWxsOiNGRkZGRkY7fQ0KPC9zdHlsZT4NCjxnPg0KCTxwb2x5Z29uIGNsYXNzPSJzdDAiIHBvaW50cz0iMTI1LDMwIDEyNSwzMCAxMjUsMzAgMzEuOSw2My4yIDQ2LjEsMTg2LjMgMTI1LDIzMCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAJIi8+DQoJPHBvbHlnb24gY2xhc3M9InN0MSIgcG9pbnRzPSIxMjUsMzAgMTI1LDUyLjIgMTI1LDUyLjEgMTI1LDE1My40IDEyNSwxNTMuNCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAxMjUsMzAgCSIvPg0KCTxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik0xMjUsNTIuMUw2Ni44LDE4Mi42aDBoMjEuN2gwbDExLjctMjkuMmg0OS40bDExLjcsMjkuMmgwaDIxLjdoMEwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMQ0KCQlMMTI1LDUyLjF6IE0xNDIsMTM1LjRIMTA4bDE3LTQwLjlMMTQyLDEzNS40eiIvPg0KPC9nPg0KPC9zdmc+DQo=" />
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" href="https://angular.io/docs/ts/latest/tutorial/">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="http://angularjs.blogspot.ca/">Angular blog</a></h2>
-  </li>
-</ul>
+<md-toolbar color="primary">
+  <button md-icon-button (click)="sidenav.toggle()">
+    <md-icon class="md-24">menu</md-icon>
+  </button>
 
+  {{title}}
+
+</md-toolbar>
+
+<md-sidenav-container>
+  <md-sidenav #sidenav mode="over" opened="false">
+    <!-- Sidenav content -->
+      Sidenav content
+      <br/>
+      <br/>
+      <a md-button routerLink="/"><md-icon class="md-18">home</md-icon> Home</a>
+      <br/>
+      <br/>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec urna massa. Integer venenatis sagittis quam sed sagittis. In tincidunt vel massa eu fermentum. Phasellus eget scelerisque odio. Maecenas sit amet nulla et elit ullamcorper ultrices ac ac arcu. Vivamus a neque gravida, dapibus augue sed, ultrices urna. Ut eleifend sagittis turpis quis iaculis. Duis eget arcu nunc. Proin placerat velit vel tellus auctor elementum. Morbi velit tellus, feugiat sed velit et, lobortis interdum sapien. Mauris sed eros et ante interdum ultricies. Nunc eget tortor nec justo tristique mollis. Cras dictum orci vitae nunc posuere, sit amet porttitor nibh scelerisque. Duis ut lorem aliquet, lacinia neque eget, semper ante.
+  </md-sidenav>
+
+  <!-- Main content -->
+  <div class="my-content">
+    Main content<br/>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec urna massa. Integer venenatis sagittis quam sed sagittis. In tincidunt vel massa eu fermentum. Phasellus eget scelerisque odio. Maecenas sit amet nulla et elit ullamcorper ultrices ac ac arcu. Vivamus a neque gravida, dapibus augue sed, ultrices urna. Ut eleifend sagittis turpis quis iaculis. Duis eget arcu nunc. Proin placerat velit vel tellus auctor elementum. Morbi velit tellus, feugiat sed velit et, lobortis interdum sapien. Mauris sed eros et ante interdum ultricies. Nunc eget tortor nec justo tristique mollis. Cras dictum orci vitae nunc posuere, sit amet porttitor nibh scelerisque. Duis ut lorem aliquet, lacinia neque eget, semper ante.
+  </div>
+
+</md-sidenav-container>

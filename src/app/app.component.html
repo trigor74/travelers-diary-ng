@@ -2,7 +2,7 @@
   <button md-icon-button (click)="sidenav.toggle()">
     <md-icon class="md-24">menu</md-icon>
   </button>
-  <span class="app-toolbar-title">{{title}}</span>
+  <span class="app-toolbar-title" routerLink="/">{{title}}</span>
   <span class="app-toolbar-filler"></span>
   <app-account></app-account>
 </md-toolbar>
@@ -11,36 +11,45 @@
   <md-sidenav class="sidenav" #sidenav mode="over" opened="false">
     <!-- Sidenav content -->
     <md-list>
-      <h3 md-subheader>Section 1</h3>
+      <!-- h3 md-subheader>Section 1</h3 -->
       <md-list-item class="sidenav-item" routerLink="/">
         <md-icon class="md-18">home</md-icon>
         <span>Home</span>
       </md-list-item>
-      <md-list-item class="sidenav-item" routerLink="/">
-        <md-icon class="md-18">home</md-icon>
-        <span>Home</span>
+      <md-list-item class="sidenav-item" routerLink="/members">
+        <md-icon class="md-18">people</md-icon>
+        <span>Members</span>
       </md-list-item>
-      <md-list-item class="sidenav-item" routerLink="/">
-        <md-icon class="md-18">home</md-icon>
-        <span>Home</span>
-      </md-list-item>
-      <md-divider></md-divider>
-      <h3 md-subheader>Section 2</h3>
-      <md-list-item class="sidenav-item" routerLink="/">
-        <md-icon class="md-18">home</md-icon>
-        <span>Home</span>
-      </md-list-item>
-      <md-list-item class="sidenav-item" routerLink="/">
-        <md-icon class="md-18">home</md-icon>
-        <span>Home</span>
-      </md-list-item>
+      <!-- registered user's menu -->
+      <span *ngIf="authService.user | async">
+        <md-divider></md-divider>
+        <md-list-item class="sidenav-item" routerLink="/travels">
+          <md-icon svgIcon="travel-luggage" class="md-18"></md-icon>
+          <span>Travels</span>
+        </md-list-item>
+        <md-list-item class="sidenav-item" routerLink="/diary">
+          <md-icon svgIcon="book-with-closure" class="md-18"></md-icon>
+          <span>Diary</span>
+        </md-list-item>
+        <md-list-item class="sidenav-item" routerLink="/reminder">
+          <md-icon class="md-18">notifications</md-icon>
+          <span>Reminder</span>
+        </md-list-item>
+        <md-divider></md-divider>
+        <!-- h3 md-subheader>Section 2</h3 -->
+        <md-list-item class="sidenav-item"  routerLink="/profile">
+          <md-icon class="md-18">account_box</md-icon>
+          <span>Profile</span>
+        </md-list-item>
+        <md-list-item class="sidenav-item" (click)="logout()">
+          <md-icon class="md-18">exit_to_app</md-icon>
+          <span>Logout</span>
+        </md-list-item>
+      </span>
     </md-list>
   </md-sidenav>
-
   <!-- Main content -->
   <div class="app-content">
-    Main content<br/>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec urna massa. Integer venenatis sagittis quam sed sagittis. In tincidunt vel massa eu fermentum. Phasellus eget scelerisque odio. Maecenas sit amet nulla et elit ullamcorper ultrices ac ac arcu. Vivamus a neque gravida, dapibus augue sed, ultrices urna. Ut eleifend sagittis turpis quis iaculis. Duis eget arcu nunc. Proin placerat velit vel tellus auctor elementum. Morbi velit tellus, feugiat sed velit et, lobortis interdum sapien. Mauris sed eros et ante interdum ultricies. Nunc eget tortor nec justo tristique mollis. Cras dictum orci vitae nunc posuere, sit amet porttitor nibh scelerisque. Duis ut lorem aliquet, lacinia neque eget, semper ante.
+    <router-outlet></router-outlet>
   </div>
-
 </md-sidenav-container>

@@ -2,16 +2,14 @@
   <button md-button (click)="login()">Login</button>
 </div>
 <div *ngIf="authService.user | async">
-  <img src="{{ authService.userInfo.photoURL || '/assets/no-photo.gif' }}"
+  <img src="{{ authService.userInfo.photoURL || '/assets/img/no-photo.gif' }}"
      alt="{{ authService.userInfo.displayName }}"
      class="user"
      [mdMenuTriggerFor]="menu" />
-
   <md-menu #menu="mdMenu">
-    <!-- button md-menu-item [routerLink]="'/members/' + {{ authService.uid }}" -->
-    <button md-menu-item>
-      <md-icon class="icon">account_box</md-icon>
-      <span class="label">My Profile</span>
+    <button md-menu-item routerLink="/profile">
+      <md-icon class="md-18">account_box</md-icon>
+      <span class="label">Profile</span>
     </button>
     <button md-menu-item (click)="logout()">
       <md-icon class="md-18">exit_to_app</md-icon>

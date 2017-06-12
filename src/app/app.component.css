@@ -3,6 +3,8 @@
 
 .app-toolbar-title {
   padding: 0px 16px;
+  cursor: pointer;
+  font-weight: normal;
 }
 
 .app-toolbar-filler {

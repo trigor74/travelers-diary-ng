@@ -44,3 +44,4 @@ Thumbs.db
 # firebase
 .firebaserc
 /src/app/firebaseconfig.ts
+todo.txt

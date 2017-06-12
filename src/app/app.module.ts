@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AccountComponent } from './account/account.component';
 
-import { AuthService } from './auth.service';
+import { AuthService } from './shared/auth.service';
 
 import { firebaseConfig } from './firebaseconfig';
 

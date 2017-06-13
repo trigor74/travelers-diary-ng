@@ -1,9 +1,9 @@
-<div *ngIf="!(authService.user | async)">
+<div *ngIf="!authService.authenticated">
   <button md-button (click)="login()">Login</button>
 </div>
-<div *ngIf="authService.user | async">
-  <img src="{{ authService.userInfo.photoURL || '/assets/img/no-photo.gif' }}"
-     alt="{{ authService.userInfo.displayName }}"
+<div *ngIf="authService.authenticated">
+  <img src="{{ (authService.userInfo)?.photoURL || '/assets/img/no-photo.gif' }}"
+     alt="{{ (authService.userInfo)?.displayName }}"
      class="user"
      [mdMenuTriggerFor]="menu" />
   <md-menu #menu="mdMenu">

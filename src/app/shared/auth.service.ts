@@ -12,61 +12,34 @@ export class AuthService {
     this.user = afAuth.authState;
   }
 
+  get authenticated(): boolean {
+    return firebase.auth().currentUser !== null;
+  }
+
+  get uid(): string {
+    return this.authenticated ? firebase.auth().currentUser.uid : '';
+  }
+
+  get userInfo(): firebase.UserInfo {
+    if (this.authenticated) {
+      return firebase.auth().currentUser.providerData[0];
+    } else {
+      return null;
+    }
+  }
+
   login() {
     this.afAuth
       .auth
       .signInWithPopup(new firebase.auth.GoogleAuthProvider())
-      // .then(value => {
-      //   console.log('Logged in ', value);
-      //   console.log('UID: ', value.user.uid);
-      //   console.log(value.additionalUserInfo.profile);
-      //   // {
-      //   //   gender: "male",
-      //   //   name: "Ігор Тріфонов",
-      //   //   link: "https://plus.google.com/11677914491…",
-      //   //   id: "116779144919467620443",
-      //   //   verified_email: true,
-      //   //   given_name: "Ігор",
-      //   //   locale: "uk",
-      //   //   family_name: "Тріфонов",
-      //   //   email: "trigor74@gmail.com",
-      //   //   picture: "https://lh4.googleusercontent.com/-…"
-      //   // }
-      // })
-      .catch(err => {
-        // alert('ERROR: ' + err.message);
-        console.log('ERROR: ', err.message);
-      });
+      .catch(err => console.log('ERROR @ AuthService#login() :', err.message));
   }
 
   logout() {
     this.afAuth
       .auth
       .signOut()
-      .catch(err => {
-          // alert('ERROR: ' + err.message);
-        console.log('ERROR: ', err.message);
-      });
-  }
-
-  get authenticated(): boolean {
-    return firebase.auth().currentUser !== null;
-  }
-
-  get userInfo(): firebase.UserInfo {
-    if (this.authenticated) {
-      return this.afAuth.auth.currentUser.providerData[0];
-    } else {
-      return null;
-    }
-  }
-
-  get uid(): string {
-    if (this.authenticated) {
-      return this.afAuth.auth.currentUser.uid
-    } else {
-      return null;
-    }
+      .catch(err => console.log('ERROR @ AuthService#logout() :', err.message));
   }
 
 }

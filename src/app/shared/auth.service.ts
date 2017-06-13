@@ -50,7 +50,7 @@ export class AuthService {
   }
 
   get authenticated(): boolean {
-    return this.user !== null;
+    return firebase.auth().currentUser !== null;
   }
 
   get userInfo(): firebase.UserInfo {

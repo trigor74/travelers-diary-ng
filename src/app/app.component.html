@@ -12,36 +12,36 @@
     <!-- Sidenav content -->
     <md-list>
       <!-- h3 md-subheader>Section 1</h3 -->
-      <md-list-item class="sidenav-item" routerLink="/">
+      <md-list-item class="sidenav-item" routerLink="/" (click)="sidenav.close()">
         <md-icon class="md-18">home</md-icon>
         <span>Home</span>
       </md-list-item>
-      <md-list-item class="sidenav-item" routerLink="/members">
+      <md-list-item class="sidenav-item" routerLink="/members" (click)="sidenav.close()">
         <md-icon class="md-18">people</md-icon>
         <span>Members</span>
       </md-list-item>
       <!-- registered user's menu -->
       <span *ngIf="authService.user | async">
         <md-divider></md-divider>
-        <md-list-item class="sidenav-item" routerLink="/travels">
+        <md-list-item class="sidenav-item" routerLink="/travels" (click)="sidenav.close()">
           <md-icon svgIcon="travel-luggage" class="md-18"></md-icon>
           <span>Travels</span>
         </md-list-item>
-        <md-list-item class="sidenav-item" routerLink="/diary">
+        <md-list-item class="sidenav-item" routerLink="/diary" (click)="sidenav.close()">
           <md-icon svgIcon="book-with-closure" class="md-18"></md-icon>
           <span>Diary</span>
         </md-list-item>
-        <md-list-item class="sidenav-item" routerLink="/reminder">
+        <md-list-item class="sidenav-item" routerLink="/reminder" (click)="sidenav.close()">
           <md-icon class="md-18">notifications</md-icon>
           <span>Reminder</span>
         </md-list-item>
         <md-divider></md-divider>
         <!-- h3 md-subheader>Section 2</h3 -->
-        <md-list-item class="sidenav-item"  routerLink="/profile">
+        <md-list-item class="sidenav-item"  routerLink="/profile" (click)="sidenav.close()">
           <md-icon class="md-18">account_box</md-icon>
           <span>Profile</span>
         </md-list-item>
-        <md-list-item class="sidenav-item" (click)="logout()">
+        <md-list-item class="sidenav-item" (click)="logout(); sidenav.close();">
           <md-icon class="md-18">exit_to_app</md-icon>
           <span>Logout</span>
         </md-list-item>

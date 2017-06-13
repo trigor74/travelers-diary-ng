@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpModule } from '@angular/http';
@@ -9,13 +8,15 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 
-import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { AccountComponent } from './account/account.component';
-
+import { AuthGuard } from './auth.guard';
 import { AuthService } from './shared/auth.service';
 
 import { firebaseConfig } from './firebaseconfig';
+import { routes } from './app.routes';
+
+import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { AccountComponent } from './account/account.component';
 import { TravelsComponent } from './travels/travels.component';
 import { TravelItemComponent } from './travel-item/travel-item.component';
 import { TravelInfoComponent } from './travel-info/travel-info.component';
@@ -55,20 +56,12 @@ import { MemberInfoComponent } from './member-info/member-info.component';
     BrowserAnimationsModule,
     BrowserModule,
     HttpModule,
-    RouterModule.forRoot([
-      {path: 'members', component: MembersComponent},
-      {path: 'profile', component: ProfileComponent},
-      {path: 'travels', component: TravelsComponent},
-      {path: 'diary', component: DiaryComponent},
-      {path: 'reminder', component: ReminderComponent},
-      {path: '', component: HomeComponent, pathMatch: 'full'},
-      {path: '**', component: HomeComponent}
-    ]),
+    routes,
     MaterialModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule
   ],
-  providers: [AuthService, AngularFireDatabase],
+  providers: [AuthGuard, AuthService, AngularFireDatabase],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

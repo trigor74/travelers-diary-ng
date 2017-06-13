@@ -1,0 +1,44 @@
+:host {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.desc {
+  background-color: #009688cc;
+  color: #fff;
+  padding: 2em;
+  position: relative;
+  text-align: center;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: normal;
+  margin: .25em 0;
+}
+
+.section {
+  margin: 0 0 2em 0;
+}
+
+.edit {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  min-width: auto;
+}
+
+.user {
+  border-radius: 50%;
+  height: 8em;
+  width: 8em;
+}
+
+.input {
+  width: 100%;
+}
+
+button {
+  margin-left: 1em;
+}

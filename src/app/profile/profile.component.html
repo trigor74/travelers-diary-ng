@@ -1,3 +1,48 @@
-<p>
-  profile works!
-</p>
+<div *ngIf="!edit">
+  <div class="desc" color="primary">
+    <button md-button (click)="editMode(true)" class="edit"><i class="material-icons">edit</i></button>
+    <img src="{{ photoURL !== '' ? photoURL : '/assets/img/no-photo.gif' }}" alt="{{ name }}" class="user" />
+    <h1>{{ name }}</h1>
+    <h4>{{ email }}</h4>
+  </div>
+<md-card>
+  <div class="section">
+    <h3>Profile info</h3>
+    <p>UID: {{ uid }}</p>
+  </div>
+  <div class="section">
+    <h3>Edditional info</h3>
+    <p>Some edditional info</p>
+  </div>
+</md-card>
+</div>
+
+<!-- form for edit profile here -->
+<md-card *ngIf="edit">
+  <div class="desc" color="primary">
+    <img src="{{ photoURL !== '' ? photoURL : '/assets/img/no-photo.gif' }}" alt="{{ name }}" class="user" />
+    <h1>{{ name }}</h1>
+    <h4>{{ email }}</h4>
+  </div>
+</md-card>
+
+
+<!--<md-card>-->
+  <!--<md-card-title-group>-->
+    <!--<md-card-title>{{ name }}</md-card-title>-->
+    <!--<md-card-subtitle>{{ email }}</md-card-subtitle>-->
+    <!--<img md-card-md-image src="{{ photoURL !== '' ? photoURL : '/assets/img/no-photo.gif' }}">-->
+  <!--</md-card-title-group>-->
+  <!--<md-card-content>-->
+    <!--UID: {{ uid }}-->
+  <!--</md-card-content>-->
+  <!--<md-card-actions align="start">-->
+    <!--<button md-button>Action1</button>-->
+    <!--<button md-button>Action2</button>-->
+
+  <!--</md-card-actions>-->
+  <!--<md-card-footer>-->
+    <!--Footer-->
+  <!--</md-card-footer>-->
+<!--</md-card>-->
+

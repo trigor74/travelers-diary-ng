@@ -21,10 +21,10 @@ import { TravelListComponent } from './travel-list/travel-list.component';
 import { TravelItemComponent } from './travel-item/travel-item.component';
 import { TravelInfoComponent } from './travel-info/travel-info.component';
 import { TravelComponent } from './travel/travel.component';
-import { DiaryComponent } from './diary/diary.component';
+import { DiaryListComponent } from './diary-list/diary-list.component';
 import { DiaryItemComponent } from './diary-item/diary-item.component';
 import { DiaryNoteComponent } from './diary-note/diary-note.component';
-import { ReminderComponent } from './reminder/reminder.component';
+import { ReminderListComponent } from './reminder-list/reminder-list.component';
 import { ReminderItemComponent } from './reminder-item/reminder-item.component';
 import { ReminderTodoComponent } from './reminder-todo/reminder-todo.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -41,10 +41,10 @@ import { MemberInfoComponent } from './member-info/member-info.component';
     TravelItemComponent,
     TravelInfoComponent,
     TravelComponent,
-    DiaryComponent,
+    DiaryListComponent,
     DiaryItemComponent,
     DiaryNoteComponent,
-    ReminderComponent,
+    ReminderListComponent,
     ReminderItemComponent,
     ReminderTodoComponent,
     ProfileComponent,

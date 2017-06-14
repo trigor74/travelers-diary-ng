@@ -1,3 +1,16 @@
-<p>
-  travel works!
-</p>
+<div color="primary">
+  <span>{{title}}</span>
+  <p>Some travel info</p>
+</div>
+<md-tab-group>
+  <md-tab label="DIARY">
+    <app-diary-list [travelId]="travelId"></app-diary-list>
+  </md-tab>
+  <md-tab label="REMINDER">
+    <app-reminder-list [travelId]="travelId"></app-reminder-list>
+  </md-tab>
+  <md-tab label="MAP">
+    <h1>Some tab "MAP" content</h1>
+    <p>...</p>
+  </md-tab>
+</md-tab-group>

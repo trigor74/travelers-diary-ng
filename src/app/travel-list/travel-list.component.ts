@@ -9,11 +9,9 @@ import { AuthService } from '../shared/auth.service';
 })
 export class TravelListComponent implements OnInit {
   @Output() items: FirebaseListObservable<any>;
-  uid = '';
 
-  constructor(db: AngularFireDatabase, private authService: AuthService) {
-    this.uid = this.authService.uid;
-    this.items = db.list('/users/' + this.uid + '/travels', {
+  constructor(private db: AngularFireDatabase, private authService: AuthService) {
+    this.items = db.list('/users/' + this.authService.uid + '/travels', {
       query: {
         orderByChild: 'creationTime',
         startAt: 0

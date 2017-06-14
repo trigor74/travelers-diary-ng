@@ -5,3 +5,7 @@
   bottom: 20px;
   right: 20px;
 }
+
+.app-travel-list-action button md-icon {
+  color: white;
+}

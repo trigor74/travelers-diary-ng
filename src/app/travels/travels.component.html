@@ -1,15 +1,1 @@
-<md-card *ngFor="let item of items | async"
-         [ngStyle]="{'background-image':
-         item.userCover ? 'url(\'' + item.userCover + '\')'
-                        : 'url(\'' + item.defaultCover
-                            .replace('android.resource:\/\/com.travelersdiary\/drawable\/', '\/assets\/img\/cover\/')
-                            + '.jpg\')'
-         }">
-  <md-card-content>
-    <button md-button (click)="edit(item)" class="edit"><i class="material-icons">edit</i></button>
-    <div>
-      <h4 md-line>{{(item)?.title}}</h4>
-      <p md-line> {{(item)?.start | date}} - {{(item)?.stop | date}} </p>
-    </div>
-  </md-card-content>
-</md-card>
+<app-travel-item *ngFor="let item of items | async" [item]="item"></app-travel-item>

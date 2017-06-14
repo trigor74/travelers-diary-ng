@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-travel-item',
@@ -6,10 +6,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./travel-item.component.css']
 })
 export class TravelItemComponent implements OnInit {
+  @Input() item: any;
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  edit(item: any) {
+
+  }
+
 }
+
+// export class Travel {
+//   creationTime: number;
+//   start: number;
+//   stop: number;
+//   title: string;
+//   description: string;
+//   active: boolean;
+//   picasaAlbumId: string;
+//   defaultCover: string;
+//   userCover: string;
+// }

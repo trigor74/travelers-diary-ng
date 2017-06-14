@@ -1,0 +1,49 @@
+md-card {
+  margin: 3px 3px;
+  padding: 74px;
+  min-height: 100px;
+  min-width: 450px;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+md-card-content:before {
+  content: "";
+  display: inline-block;
+  min-height: inherit;
+  height: 100%;
+  vertical-align: middle;
+}
+
+md-card-content {
+  color: white;
+  text-align: center;
+}
+
+md-card-content div {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+h4 {
+  font-size: 2.5em;
+}
+
+p {
+  margin-top: 15px;
+}
+
+.edit {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  min-width: auto;
+}
+
+button {
+  margin-left: 1em;
+}

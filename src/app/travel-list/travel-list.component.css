@@ -1,0 +1,7 @@
+.app-travel-list-action {
+  display: inline-block;
+  position: sticky;
+  float: right;
+  bottom: 20px;
+  right: 20px;
+}

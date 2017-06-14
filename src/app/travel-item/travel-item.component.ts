@@ -13,9 +13,9 @@ export class TravelItemComponent implements OnInit {
   ngOnInit() {
   }
 
-  edit(item: any) {
+  edit(item: any) {}
 
-  }
+  delete(item: any) {}
 
 }
 

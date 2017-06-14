@@ -17,7 +17,7 @@ import { routes } from './app.routes';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AccountComponent } from './account/account.component';
-import { TravelsComponent } from './travels/travels.component';
+import { TravelListComponent } from './travel-list/travel-list.component';
 import { TravelItemComponent } from './travel-item/travel-item.component';
 import { TravelInfoComponent } from './travel-info/travel-info.component';
 import { TravelComponent } from './travel/travel.component';
@@ -37,7 +37,7 @@ import { MemberInfoComponent } from './member-info/member-info.component';
     AppComponent,
     HomeComponent,
     AccountComponent,
-    TravelsComponent,
+    TravelListComponent,
     TravelItemComponent,
     TravelInfoComponent,
     TravelComponent,

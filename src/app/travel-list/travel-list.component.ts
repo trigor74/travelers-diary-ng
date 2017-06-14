@@ -1,13 +1,13 @@
 import { Component, OnInit, Output } from '@angular/core';
-import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { AuthService } from '../shared/auth.service';
 
 @Component({
-  selector: 'app-travels',
-  templateUrl: './travels.component.html',
-  styleUrls: ['./travels.component.css'],
+  selector: 'app-travel-list',
+  templateUrl: './travel-list.component.html',
+  styleUrls: ['./travel-list.component.css'],
 })
-export class TravelsComponent implements OnInit {
+export class TravelListComponent implements OnInit {
   @Output() items: FirebaseListObservable<any>;
   uid = '';
 

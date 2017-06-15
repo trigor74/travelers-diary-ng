@@ -1,4 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { DataService } from '../database/data.service';
 
 @Component({
   selector: 'app-diary-list',
@@ -6,11 +8,13 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./diary-list.component.css']
 })
 export class DiaryListComponent implements OnInit {
-  @Input() travelId = '';
+  @Input() travelId: string;
+  @Output() items: Observable<any>;
 
-  constructor() { }
+  constructor(private data: DataService) {}
 
   ngOnInit() {
+    this.items = this.data.getDiaryList(this.travelId);
   }
 
 }

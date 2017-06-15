@@ -1,4 +1,4 @@
 <app-travel-item *ngFor="let item of items | async" [item]="item"></app-travel-item>
 <span class="app-travel-list-action">
-  <button md-fab><md-icon>add</md-icon></button>
+  <button md-fab (click)="createTravel()"><md-icon>add</md-icon></button>
 </span>

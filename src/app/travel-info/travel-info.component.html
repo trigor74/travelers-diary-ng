@@ -1,3 +1,19 @@
-<p>
-  travel-info works!
-</p>
+<div class="info" color="primary"
+  *ngIf="travel"
+  [ngStyle]="{'background-image':
+         travel?.userCover ? 'url(\'' + travel?.userCover + '\')'
+                        : 'url(\'' + travel?.defaultCover
+                            .replace('android.resource:\/\/com.travelersdiary\/drawable\/', '\/assets\/img\/cover\/')
+                            + '.jpg\')'
+         }">
+  <div class="info-content">
+    <md-icon class="active" *ngIf="travel?.active">explore</md-icon>
+    <h1 *ngIf="travel?.title !== ''">{{travel?.title}}</h1>
+    <h2 *ngIf="travel?.description !== ''">{{travel?.description}}</h2>
+    <p>
+      <span *ngIf="travel?.creationTime > 0">Created: {{travel?.creationTime | date}}</span><br/>
+      <span *ngIf="travel?.start > 0">Start: {{travel?.start | date}}</span><br/>
+      <span *ngIf="travel?.stop > 0">Stop: {{travel?.stop | date}}</span>
+    </p>
+  </div>
+</div>

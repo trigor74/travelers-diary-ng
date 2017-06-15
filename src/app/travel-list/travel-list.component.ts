@@ -1,6 +1,6 @@
 import { Component, OnInit, Output } from '@angular/core';
-import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
-import { AuthService } from '../shared/auth.service';
+import { DataService } from '../database/data.service';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-travel-list',
@@ -8,21 +8,20 @@ import { AuthService } from '../shared/auth.service';
   styleUrls: ['./travel-list.component.css'],
 })
 export class TravelListComponent implements OnInit {
-  @Output() items: FirebaseListObservable<any>;
+  @Output() items: Observable<any>;
 
-  constructor(private db: AngularFireDatabase, private authService: AuthService) {
-    this.items = db.list('/users/' + this.authService.uid + '/travels', {
-      query: {
-        orderByChild: 'creationTime',
-        startAt: 0
-      }
-    });
-  }
+  constructor(private data: DataService) {}
 
   ngOnInit() {
+    this.items = this.data.getTravelList();
+    // reverse order
+    // this.items = this.data.getTravelList().map(res => {
+    //   return res.reverse();
+    // });
+  }
+
+  createTravel() {
+    console.log('WARNING @ TravelListComponent#createTravel(): not implemented yet');
   }
 
 }
-
-// https://resplendent-torch-7243.firebaseio.com/users/:uid/travels
-// query = mFirebaseRef.orderByChild("creationTime ").startAt(0);

@@ -10,6 +10,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
 
 import { AuthGuard } from './auth.guard';
 import { AuthService } from './shared/auth.service';
+import { DataService } from './database/data.service';
 
 import { firebaseConfig } from './firebaseconfig';
 import { routes } from './app.routes';
@@ -31,6 +32,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { MembersComponent } from './members/members.component';
 import { MemberItemComponent } from './member-item/member-item.component';
 import { MemberInfoComponent } from './member-info/member-info.component';
+import { SafeHtmlPipe } from './shared/safe-html.pipe';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,8 @@ import { MemberInfoComponent } from './member-info/member-info.component';
     ProfileComponent,
     MembersComponent,
     MemberItemComponent,
-    MemberInfoComponent
+    MemberInfoComponent,
+    SafeHtmlPipe
   ],
   imports: [
     BrowserAnimationsModule,
@@ -61,7 +64,12 @@ import { MemberInfoComponent } from './member-info/member-info.component';
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule
   ],
-  providers: [AuthGuard, AuthService, AngularFireDatabase],
+  providers: [
+    AuthGuard,
+    AuthService,
+    AngularFireDatabase,
+    DataService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

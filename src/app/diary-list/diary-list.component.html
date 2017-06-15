@@ -1,2 +1,1 @@
-<h1>DIARY List</h1>
-<p>travelId: {{travelId}}</p>
+<app-diary-item *ngFor="let item of items | async" [item]="item"></app-diary-item>

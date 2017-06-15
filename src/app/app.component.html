@@ -23,6 +23,7 @@
       <!-- registered user's menu -->
       <span *ngIf="authService.user | async">
         <md-divider></md-divider>
+        <!-- h3 md-subheader>Section 2</h3 -->
         <md-list-item class="sidenav-item" routerLink="/travels" (click)="sidenav.close()">
           <md-icon svgIcon="travel-luggage" class="md-18"></md-icon>
           <span>Travels</span>
@@ -36,7 +37,7 @@
           <span>Reminder</span>
         </md-list-item>
         <md-divider></md-divider>
-        <!-- h3 md-subheader>Section 2</h3 -->
+        <!-- h3 md-subheader>Section 3</h3 -->
         <md-list-item class="sidenav-item"  routerLink="/profile" (click)="sidenav.close()">
           <md-icon class="md-18">account_box</md-icon>
           <span>Profile</span>

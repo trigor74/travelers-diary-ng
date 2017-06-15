@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Travel } from '../shared/models';
 
 @Component({
   selector: 'app-travel-info',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./travel-info.component.css']
 })
 export class TravelInfoComponent implements OnInit {
+  @Input() travel: Travel;
 
   constructor() { }
 

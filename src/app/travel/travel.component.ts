@@ -1,7 +1,7 @@
 import { Component, OnInit, Output } from '@angular/core';
-import { AuthService } from '../shared/auth.service';
-import { AngularFireDatabase } from 'angularfire2/database';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
+import { DataService } from '../database/data.service';
 
 @Component({
   selector: 'app-travel',
@@ -9,14 +9,15 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./travel.component.css']
 })
 export class TravelComponent implements OnInit {
-  title = 'travel title here';
-  @Output() travelId = '';
+  @Output() travelId: string;
+  @Output() travel: Observable<any>;
 
-  constructor(private db: AngularFireDatabase, private authService: AuthService, private route: ActivatedRoute) {
+  constructor(private data: DataService, private route: ActivatedRoute) {
     this.travelId = route.snapshot.paramMap.get('id');
   }
 
   ngOnInit() {
+    this.travel = this.data.getTravel(this.travelId);
   }
 
 }

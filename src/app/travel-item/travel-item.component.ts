@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Travel } from '../shared/models';
 
 @Component({
   selector: 'app-travel-item',
@@ -6,27 +7,20 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./travel-item.component.css']
 })
 export class TravelItemComponent implements OnInit {
-  @Input() item: any;
+  @Input() item: Travel;
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  edit(item: any) {}
+  edit(item: any) {
+    console.log('WARNING @ TravelItemComponent#edit(): not implemented yet', item);
+  }
 
-  delete(item: any) {}
+  delete(item: any) {
+    console.log('WARNING @ TravelItemComponent#delete(): not implemented yet', item);
+  }
 
 }
 
-// export class Travel {
-//   creationTime: number;
-//   start: number;
-//   stop: number;
-//   title: string;
-//   description: string;
-//   active: boolean;
-//   picasaAlbumId: string;
-//   defaultCover: string;
-//   userCover: string;
-// }

@@ -1,6 +1,5 @@
 <div color="primary">
-  <span>{{title}}</span>
-  <p>Some travel info</p>
+  <app-travel-info [travel]="travel | async"></app-travel-info>
 </div>
 <md-tab-group>
   <md-tab label="DIARY">

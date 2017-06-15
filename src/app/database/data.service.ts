@@ -14,25 +14,29 @@ export class DataService {
     return this.db.object('/users/' + this.authService.uid + '/travels/' + travelId);
   }
 
-   getTravelList(): Observable<Travel[]> {
+  getTravelList(): Observable<Travel[]> {
     return this.db.list('/users/' + this.authService.uid + '/travels', {
-        query: {
-          orderByChild: 'creationTime',
-          startAt: 0
-        }
-      });
+      query: {
+        orderByChild: 'creationTime',
+        startAt: 0
+      }
+    });
   }
 
-  getDiaryList(travelId: string): Observable<any> {
-    if (travelId !== null && travelId !== '') {
+  getDiaryList(travelId: string = ''): Observable<any> {
+    if (travelId) {
       return this.db.list('/users/' + this.authService.uid + '/diary', {
-          query: {
-            orderByChild: 'travelId',
-            equalTo: travelId
-          }
-        });
+        query: {
+          orderByChild: 'travelId',
+          equalTo: travelId
+        }
+      });
     } else {
-      return this.db.list('/users/' + this.authService.uid + '/diary');
+      return this.db.list('/users/' + this.authService.uid + '/diary', {
+        query: {
+          orderByChild: 'time'
+        }
+      });
     }
   }
 

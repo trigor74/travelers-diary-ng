@@ -24,6 +24,7 @@ export class DataService {
   }
 
   getDiaryList(travelId: string = ''): Observable<any> {
+    // TODO: add model for Diary to model.ts and return type Observable<Diary[]>
     if (travelId) {
       return this.db.list('/users/' + this.authService.uid + '/diary', {
         query: {

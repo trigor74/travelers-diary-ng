@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-reminder-item',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./reminder-item.component.css']
 })
 export class ReminderItemComponent implements OnInit {
+  @Input() item: any;
 
   constructor() { }
 

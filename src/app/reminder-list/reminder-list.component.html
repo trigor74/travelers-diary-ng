@@ -1,2 +1,1 @@
-<h1>REMINDER List</h1>
-<p>travelId: {{travelId}}</p>
+<app-reminder-item *ngFor="let item of items | async" [item]="item"></app-reminder-item>

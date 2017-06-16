@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { AuthService } from '../shared/auth.service';
 import { Observable } from 'rxjs/Observable';
-import { Travel } from '../shared/models';
+import { DiaryNote, ReminderItem, Travel } from '../shared/models';
 
 @Injectable()
 export class DataService {
@@ -23,8 +23,7 @@ export class DataService {
     });
   }
 
-  getDiaryList(travelId: string = ''): Observable<any> {
-    // TODO: add model for Diary to model.ts and return type Observable<Diary[]>
+  getDiaryList(travelId: string = ''): Observable<DiaryNote[]> {
     if (travelId) {
       return this.db.list('/users/' + this.authService.uid + '/diary', {
         query: {
@@ -40,5 +39,23 @@ export class DataService {
       });
     }
   }
+
+  getReminderList(travelId: string = ''): Observable<ReminderItem[]> {
+    if (travelId) {
+      return this.db.list('/users/' + this.authService.uid + '/reminder', {
+        query: {
+          orderByChild: 'travelId',
+          equalTo: travelId
+        }
+      });
+    } else {
+      return this.db.list('/users/' + this.authService.uid + '/reminder', {
+        query: {
+          orderByKey: true
+        }
+      });
+    }
+  }
+
 
 }

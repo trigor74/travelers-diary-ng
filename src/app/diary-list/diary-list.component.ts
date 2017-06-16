@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { DataService } from '../database/data.service';
+import { DiaryNote } from '../shared/models';
 
 @Component({
   selector: 'app-diary-list',
@@ -9,7 +10,7 @@ import { DataService } from '../database/data.service';
 })
 export class DiaryListComponent implements OnInit {
   @Input() travelId: string;
-  @Output() items: Observable<any>;
+  @Output() items: Observable<DiaryNote[]>;
 
   constructor(private data: DataService) {}
 

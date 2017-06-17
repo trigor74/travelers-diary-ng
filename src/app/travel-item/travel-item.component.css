@@ -10,22 +10,16 @@ md-card {
   background-size: cover;
 }
 
-md-card-content:before {
-  content: "";
-  display: inline-block;
-  min-height: inherit;
-  height: 100%;
-  vertical-align: middle;
-}
-
 md-card-content {
   color: white;
   text-align: center;
 }
 
 md-card-content div {
-  display: inline-block;
-  vertical-align: middle;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 button {
@@ -51,6 +45,13 @@ p {
   position: absolute;
   right: 1em;
   top: 1em;
+  min-width: auto;
+}
+
+.start-stop {
+  position: absolute;
+  right: 9em;
+  bottom: 1em;
   min-width: auto;
 }
 

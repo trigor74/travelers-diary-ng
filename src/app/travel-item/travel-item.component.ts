@@ -14,6 +14,10 @@ export class TravelItemComponent implements OnInit {
   ngOnInit() {
   }
 
+  startStop(item: any) {
+    console.log('WARNING @ TravelItemComponent#startStop(): not implemented yet', item);
+  }
+
   edit(item: any) {
     console.log('WARNING @ TravelItemComponent#edit(): not implemented yet', item);
   }

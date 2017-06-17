@@ -13,7 +13,6 @@
 
 .sidenav-container {
   height: calc(100vh - 64px); /* .mat-toolbar {	min-height:64px } */
-  /*height: 100vh;*/
   width: 100vw;
 }
 
@@ -36,10 +35,4 @@
   margin-left: .5em;
 }
 
-.app-content-wrapper {
-  overflow: auto;
-}
-
-.app-content {
-
-}
+.app-content {}

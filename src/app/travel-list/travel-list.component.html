@@ -1,4 +1,8 @@
-<app-travel-item *ngFor="let item of items | async" [item]="item"></app-travel-item>
+  <md-list>
+  <md-list-item *ngFor="let item of items | async">
+    <app-travel-item [item]="item"></app-travel-item>
+  </md-list-item>
+</md-list>
 <span class="app-travel-list-action">
   <button md-fab (click)="createTravel()"><md-icon>add</md-icon></button>
 </span>

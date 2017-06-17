@@ -1,7 +1,6 @@
 md-card {
-  margin: 3px 3px;
-  padding: 74px;
-  min-height: 100px;
+  padding: 0px;
+  min-height: 248px;
   min-width: 450px;
   background-repeat: no-repeat;
   background-position: center;

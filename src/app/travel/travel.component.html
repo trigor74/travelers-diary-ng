@@ -1,7 +1,8 @@
 <div color="primary">
   <app-travel-info [travel]="travel | async"></app-travel-info>
 </div>
-<md-tab-group>
+<md-tab-group [selectedIndex]="selectedIndex"
+              (selectChange)="changeSelectedIndex($event)">
   <md-tab label="DIARY">
     <app-diary-list [travelId]="travelId"></app-diary-list>
   </md-tab>
@@ -13,3 +14,9 @@
     <p>...</p>
   </md-tab>
 </md-tab-group>
+<span class="app-travel-action" *ngIf="selectedIndex === 0">
+  <button md-fab (click)="createDiaryNote()"><md-icon>add</md-icon></button>
+</span>
+<span class="app-travel-action" *ngIf="selectedIndex === 1">
+  <button md-fab (click)="createReminderItem()"><md-icon>add</md-icon></button>
+</span>

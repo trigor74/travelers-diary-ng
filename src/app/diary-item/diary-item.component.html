@@ -1,10 +1,14 @@
 <md-card>
+  <md-card-title-group>
+    <md-card-title>{{item?.title}}</md-card-title>
+    <md-card-subtitle>{{item?.time | date : 'dd/MM/yyyy h.mma'}}</md-card-subtitle>
+    <!--<img md-card-sm-image src="Side image">-->
+  </md-card-title-group>
+  <!--<img md-card-image src="Card wide image source">-->
   <md-card-content>
     KEY: {{item?.$key}}<br/>
     TITLE: {{item?.title}}<br/>
     DATE: {{item?.time | date : 'dd/MM/yyyy h.mma'}}<br/>
-    PLAINTEXT: {{item?.text}}<br/>
-    <hr>
     <p [innerHtml]="item?.text | safeHtml"></p>
   </md-card-content>
 </md-card>

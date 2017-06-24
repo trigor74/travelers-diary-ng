@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { DiaryNote } from '../shared/models';
 
 @Component({
   selector: 'app-diary-item',
@@ -6,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./diary-item.component.css']
 })
 export class DiaryItemComponent implements OnInit {
-  @Input() item: any;
+  @Input() item: DiaryNote;
 
   constructor() { }
 

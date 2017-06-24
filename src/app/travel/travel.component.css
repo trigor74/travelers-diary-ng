@@ -1,0 +1,14 @@
+.app-travel-action {
+  display: inline-block;
+  position: sticky;
+  float: right;
+  bottom: 56px;
+  right: 56px;
+  margin-top: 4px;
+  margin-bottom: -60px;
+  z-index: 10;
+}
+
+.app-travel-action button md-icon {
+  color: white;
+}

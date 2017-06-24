@@ -1,6 +1,7 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { DataService } from '../database/data.service';
 import { Observable } from 'rxjs/Observable';
+import { Travel } from '../shared/models';
 
 @Component({
   selector: 'app-travel-list',
@@ -8,7 +9,7 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['./travel-list.component.css'],
 })
 export class TravelListComponent implements OnInit {
-  @Output() items: Observable<any>;
+  @Output() items: Observable<Travel[]>;
 
   constructor(private data: DataService) {}
 

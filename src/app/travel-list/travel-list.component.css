@@ -12,20 +12,5 @@
   color: white;
 }
 
-md-list {
-  padding: 0px;
-}
-
-md-list-item {
-  min-height: 248px;
-  min-width: 450px;
-  flex-direction: column;
-}
-
 app-travel-item {
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
 }

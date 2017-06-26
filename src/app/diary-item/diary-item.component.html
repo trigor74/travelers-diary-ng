@@ -1,14 +1,16 @@
 <md-card>
   <md-card-title-group>
-    <md-card-title>{{item?.title}}</md-card-title>
-    <md-card-subtitle>{{item?.time | date : 'dd/MM/yyyy h.mma'}}</md-card-subtitle>
-    <!--<img md-card-sm-image src="Side image">-->
+    <md-card-title>
+      <img class="diary-note-title-icon" src="assets/img/ic_pin_black_24dp.png">
+      <div class="diary-note-date">
+        <span class="diary-note-day">{{item?.time | date : 'dd'}}</span>
+        <span class="diary-note-month">{{item?.time | date : 'MMMM'}}</span>
+        <span class="diary-note-year">{{item?.time | date : 'yyyy'}}</span>
+      </div>
+      <div class="diary-note-title">{{item?.title}}</div>
+    </md-card-title>
   </md-card-title-group>
-  <!--<img md-card-image src="Card wide image source">-->
   <md-card-content>
-    KEY: {{item?.$key}}<br/>
-    TITLE: {{item?.title}}<br/>
-    DATE: {{item?.time | date : 'dd/MM/yyyy h.mma'}}<br/>
     <p [innerHtml]="item?.text | safeHtml"></p>
   </md-card-content>
 </md-card>

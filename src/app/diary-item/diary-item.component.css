@@ -1,4 +1,41 @@
 md-card {
   /*min-height: 248px;*/
-  /*min-width: 450px;*/
+  min-width: 450px;
+}
+
+.diary-note-title-icon {
+  width: 34px;
+  height: 34px;
+  float: left;
+}
+
+.diary-note-date {
+  float: left;
+  width: calc(100% - 34px); /* 34px icon width */
+}
+
+.diary-note-day {
+  font-size: 28px;
+  float: left;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.diary-note-month {
+  display: flex;
+  flex-direction: row;
+  font-size: 14px;
+}
+
+.diary-note-year {
+  display: flex;
+  flex-direction: row;
+  font-size: 14px;
+}
+
+.diary-note-title {
+  font-size: 24px;
+  display: inline-block;
+  margin-top: 10px;
+  width: 100%;
 }

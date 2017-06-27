@@ -1,6 +1,27 @@
 md-card {
   /*min-height: 248px;*/
   min-width: 450px;
+  margin: 8px;
+}
+
+md-card-title-group {
+  padding: 15px;
+}
+
+md-card-content {
+  padding: 15px 0;
+}
+
+.title-image {
+  min-height: 248px;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: white;
+  box-shadow: 0 0 0 50vh rgba(0, 0, 0, 0.2) inset;
 }
 
 .diary-note-title-icon {

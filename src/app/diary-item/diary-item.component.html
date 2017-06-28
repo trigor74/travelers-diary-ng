@@ -4,7 +4,8 @@
     [ngStyle]="item?.photos ? {'background-image': 'url(' + item?.photos[0]?.picasaUri + ')'} : {}"
   >
     <md-card-title>
-      <img class="diary-note-title-icon" src="{{item?.photos ? 'assets/img/ic_pin_white_24dp.png' : 'assets/img/ic_pin_black_24dp.png'}}">
+      <img class="diary-note-title-icon"
+           src="{{item?.photos ? 'assets/img/ic_pin_white_24dp.png' : 'assets/img/ic_pin_black_24dp.png'}}">
       <div class="diary-note-date">
         <span class="diary-note-day">{{item?.time | date : 'dd'}}</span>
         <span class="diary-note-month">{{item?.time | date : 'MMMM'}}</span>
@@ -12,6 +13,10 @@
       </div>
       <div class="diary-note-title">{{item?.title}}</div>
     </md-card-title>
+    <div class="photo-library" *ngIf="item?.photos">
+      <span>{{item?.photos.length}}&nbsp;</span>
+      <md-icon>photo_library</md-icon>
+    </div>
   </md-card-title-group>
   <md-card-content>
     <p [innerHtml]="item?.text | safeHtml"></p>

@@ -24,6 +24,16 @@ md-card-content {
   box-shadow: 0 0 0 50vh rgba(0, 0, 0, 0.2) inset;
 }
 
+.photo-library {
+  position: absolute;
+  /*bottom: 82px;*/
+  top: 263px; /* min-height 248px + padding 15px */
+  right: 30px;
+}
+.photo-library md-icon, .photo-library span {
+  vertical-align: middle !important;
+}
+
 .diary-note-title-icon {
   width: 34px;
   height: 34px;
